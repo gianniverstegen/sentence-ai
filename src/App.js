@@ -6,7 +6,7 @@ import GenerationInputBox from "./components/GenerationResultBox";
 function App() {
   const [globalState, setState] = useState({
     isRunning: false,
-    populationAmount: 1,
+    populationAmount: 2,
     mutation: 0.01,
   });
 

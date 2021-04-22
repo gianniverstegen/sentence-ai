@@ -4,8 +4,17 @@ function geneticAlgorithm(sentence, populationAmount, mutation) {
   const targetSentence = sentence;
   const amountOfNeurons = targetSentence.length;
 
-  const initialPopulation = [];
+  const initialPopulation = getInitialPopulation(
+    populationAmount,
+    amountOfNeurons
+  );
 
+  console.log(initialPopulation);
+  // Initialpopulation ready for treatment now
+}
+
+function getInitialPopulation(populationAmount, amountOfNeurons) {
+  const initialPopulation = [];
   for (let i = 0; i < populationAmount; i++) {
     let chromosone = [];
     for (let i = 0; i < amountOfNeurons; i++) {
@@ -18,8 +27,7 @@ function geneticAlgorithm(sentence, populationAmount, mutation) {
     chromosone = removeOddCharacters(chromosone);
     initialPopulation.push(chromosone);
   }
-
-  console.log(initialPopulation);
+  return initialPopulation;
 }
 
 function removeOddCharacters(string) {
