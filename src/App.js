@@ -1,31 +1,39 @@
 import React, { useState } from "react";
-import geneticAlgorithm from "./geneticAlgorithm/main";
+import geneticAlgorithm from "./geneticAlgorithm/geneticAlgorithm";
 import InputBox from "./components/InputBox";
 import GenerationInputBox from "./components/GenerationResultBox";
 
 function App() {
   const [globalState, setState] = useState({
     isRunning: false,
-    populationAmount: 2,
+    populationAmount: 1000,
     mutation: 0.01,
   });
 
   const [targetSentence, setSentence] = useState({ value: "hi" });
-  const [generationTopPlayer, setGeneration] = useState(1);
+  const [currentGeneration, setGeneration] = useState(undefined);
 
   function generateSentences(sentence) {
     setSentence({ value: sentence });
-    geneticAlgorithm(
+    let newGeneration = geneticAlgorithm(
       sentence,
       globalState.populationAmount,
-      globalState.mutation
+      globalState.mutation,
+      undefined
     );
+    setGeneration(newGeneration);
   }
 
   return (
     <div className="App">
       <InputBox generateSentences={generateSentences} />
-      <GenerationInputBox targetSentence={targetSentence} />
+      <GenerationInputBox
+        currentGeneration={
+          currentGeneration === undefined
+            ? undefined
+            : currentGeneration.slice(0, 20)
+        }
+      />
     </div>
   );
 }

@@ -1,27 +1,38 @@
-import React from 'react'
+import React from "react";
 
-const GenerationResultBox = () => {
-    const topSentences = ["Top Sentences", "sentence1", "sentence2","sentence3", "sentence4","sentence5"]
-    const topFitness = ["Top Fitness",0.77, 0.60, 0.58, 0.54, 0.53]
+const GenerationResultBox = ({ currentGeneration }) => {
+  const topSentences = [];
+  const topFitness = [];
 
-    return (
-        <div id="generationResultBox">
-            <div id="topSentenceBlock">
-            {topSentences.map((element, IDX) => {
-                return (
-                    <div className="topSentence" key={IDX} id={`${IDX}-element`}>{element}</div>
-                )
-            })}
+  if (currentGeneration !== undefined) {
+    for (let i = 0; i < 20; i++) {
+      topSentences.push(currentGeneration[i][0]);
+      topFitness.push(currentGeneration[i][1]);
+    }
+  }
+
+  return (
+    <div id="generationResultBox">
+      <div id="topSentenceBlock">
+        {topSentences.map((element, IDX) => {
+          return (
+            <div className="topSentence" key={IDX} id={`${IDX}-element`}>
+              {element}
             </div>
-            <div id="topFitnessBlock">
-            {topFitness.map((element, IDX) => {
-                return (
-                    <div className="topFitness" key={IDX} id={`${IDX}-element`}>{element}</div>
-                )
-            })}
+          );
+        })}
+      </div>
+      <div id="topFitnessBlock">
+        {topFitness.map((element, IDX) => {
+          return (
+            <div className="topFitness" key={IDX} id={`${IDX}-element`}>
+              {element}
             </div>
-        </div>
-    )
-}
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default GenerationResultBox
+export default GenerationResultBox;

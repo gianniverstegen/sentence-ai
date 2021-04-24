@@ -74,7 +74,7 @@ input:focus {
   top: 10%;
   left: 50%;
   width: 45%;
-  background-color: #2f2fa2;
+  color: #2f2fa2;
   height: 80%;
   min-height: 550px;
   min-width: 300px;
@@ -96,11 +96,13 @@ input:focus {
 .topSentence {
   margin-top: 5%;
   width: 100%;
+  color: #2f32db;
 }
 
 .topFitness {
   margin-top: 5%;
   width: 100%;
+  color: #2f32db;
 }
 
 /* GREY: 99738e
