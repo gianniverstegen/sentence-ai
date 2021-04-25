@@ -15,13 +15,13 @@ function App() {
 
   function generateSentences(sentence) {
     setSentence({ value: sentence });
-    let newGeneration = geneticAlgorithm(
+    let firstGeneration = geneticAlgorithm(
       sentence,
       globalState.populationAmount,
       globalState.mutation,
       undefined
     );
-    setGeneration(newGeneration);
+    setGeneration(firstGeneration);
   }
 
   return (

@@ -1,9 +1,11 @@
 import numberToCharacter from "./numberToCharacter";
+import getNewPopulation from "./getNewPopulation";
 
 function geneticAlgorithm(sentence, populationAmount, mutation, oldPopulation) {
   const targetSentence = sentence;
   const amountOfNeurons = targetSentence.length;
 
+  // Old population things
   if (oldPopulation === undefined) {
     var currentPopulation = getInitialPopulation(
       populationAmount,
@@ -11,41 +13,42 @@ function geneticAlgorithm(sentence, populationAmount, mutation, oldPopulation) {
     );
   } else {
     var untreatedOldPopulation = oldPopulation;
+    // get a new pop based on the old one
+    // getNewPopulation(sorted_population);
   }
 
-  let evaluatedPopulation = evaluateFitness(currentPopulation, targetSentence);
+  // treat the current population
+  let evaluatedPopulation = getFitness(currentPopulation, targetSentence);
   let sorted_population = sort_object(evaluatedPopulation);
+  // console.log(sorted_population);
+  let newPopulation = getNewPopulation(sorted_population, populationAmount); // This function is here for testing
   return sorted_population;
 }
 
-function evaluateFitness(population, targetSentence) {
-  for (const [key] of Object.entries(population)) {
-    let fitness = 0;
-    for (let i = 0; i < key.length; i++) {
-      if (key.charAt(i) === targetSentence.charAt(i)) {
-        fitness += 1;
+function getFitness(population, targetSentence) {
+  for (let i = 0; i < population.length; i++) {
+    let amountRight = 0;
+    for (let j = 0; j < population[i][0].length; j++) {
+      if (population[i][0].charAt(j) === targetSentence.charAt(j)) {
+        amountRight += 1;
       }
     }
-    population[key] =
-      Math.round((fitness / targetSentence.length) * 10000) / 10000;
+    let fitness =
+      Math.round((amountRight / targetSentence.length) * 1000) / 1000;
+    population[i].push(fitness);
   }
   return population;
 }
 
-function sort_object(dict) {
-  var items = Object.keys(dict).map(function (key) {
-    return [key, dict[key]];
+function sort_object(population) {
+  population.sort(function (a, b) {
+    return b[1] - a[1];
   });
-
-  // Sort the array based on the second element
-  items.sort(function (first, second) {
-    return second[1] - first[1];
-  });
-  return items;
+  return population;
 }
 
 function getInitialPopulation(populationAmount, amountOfNeurons) {
-  const initialPopulation = {};
+  const initialPopulation = [];
   for (let i = 0; i < populationAmount; i++) {
     let chromosone = [];
     for (let i = 0; i < amountOfNeurons; i++) {
@@ -56,7 +59,7 @@ function getInitialPopulation(populationAmount, amountOfNeurons) {
     }
     chromosone = chromosone.join();
     chromosone = _removeOddCharacters(chromosone);
-    initialPopulation[chromosone] = "undefined";
+    initialPopulation.push([chromosone]);
   }
   return initialPopulation;
 }
