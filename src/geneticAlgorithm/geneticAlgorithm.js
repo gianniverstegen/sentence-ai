@@ -4,24 +4,25 @@ import getNewPopulation from "./getNewPopulation";
 function geneticAlgorithm(sentence, populationAmount, mutation, oldPopulation) {
   const targetSentence = sentence;
   const amountOfNeurons = targetSentence.length;
+  var currentPopulation = undefined;
 
   // Old population things
   if (oldPopulation === undefined) {
-    var currentPopulation = getInitialPopulation(
-      populationAmount,
-      amountOfNeurons
-    );
+    currentPopulation = getInitialPopulation(populationAmount, amountOfNeurons);
   } else {
-    var untreatedOldPopulation = oldPopulation;
-    // get a new pop based on the old one
-    // getNewPopulation(sorted_population);
+    let untreatedOldPopulation = oldPopulation;
+    currentPopulation = getNewPopulation(
+      untreatedOldPopulation,
+      populationAmount,
+      mutation
+    );
+    // console.log(currentPopulation);
   }
 
   // treat the current population
   let evaluatedPopulation = getFitness(currentPopulation, targetSentence);
   let sorted_population = sort_object(evaluatedPopulation);
-  // console.log(sorted_population);
-  let newPopulation = getNewPopulation(sorted_population, populationAmount); // This function is here for testing
+  // let newPopulation = getNewPopulation(sorted_population, populationAmount); // This function is here for testing
   return sorted_population;
 }
 
@@ -52,7 +53,7 @@ function getInitialPopulation(populationAmount, amountOfNeurons) {
   for (let i = 0; i < populationAmount; i++) {
     let chromosone = [];
     for (let i = 0; i < amountOfNeurons; i++) {
-      let neuronNumber = Math.floor(Math.random() * 90);
+      let neuronNumber = Math.floor(Math.random() * 80);
       // 62 alphanumeric (A-Z, a-z, 0-9) and 28 special characters
       let neuron = numberToCharacter(neuronNumber);
       chromosone.push(neuron);

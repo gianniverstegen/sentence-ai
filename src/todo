@@ -1,4 +1,4 @@
-[] Add mutation in the genetic algorithm
-[] Make a while loop that works on the new generations
-[] Show the generation on the screen
+[*] Add mutation in the genetic algorithm
+[*] Make a while loop that works on the new generations
+[*] Show the generation on the screen
 [] Show the top and average fitness on the screen 

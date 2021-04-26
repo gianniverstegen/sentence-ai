@@ -96,13 +96,20 @@ input:focus {
 .topSentence {
   margin-top: 5%;
   width: 100%;
-  color: #2f32db;
+  color: #f64c72;
 }
 
 .topFitness {
   margin-top: 5%;
   width: 100%;
-  color: #2f32db;
+  color: #f64c72;
+}
+
+#generationAmountDisplayer {
+  position: absolute;
+  top: 13%;
+  margin-top: 3px;
+  left: 18%;
 }
 
 /* GREY: 99738e
