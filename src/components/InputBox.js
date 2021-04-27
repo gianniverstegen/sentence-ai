@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-const InputBox = ({ generateSentences, generationNumber }) => {
+const InputBox = ({ generateSentences, generationNumber, targetSentence }) => {
   const [currentSentence, setIntermediateSentence] = useState({ value: "" });
-
   function setTargetSentence(event) {
     setIntermediateSentence({ value: event.target.value });
   }
@@ -22,6 +21,10 @@ const InputBox = ({ generateSentences, generationNumber }) => {
       </button>
       <div id="generationAmountDisplayer">
         Current Generation: {generationNumber}
+      </div>
+      <div id="infoBox">
+        Using a population of a thousand, approximately{" "}
+        {generationNumber * 1000} possible sentences were considered.{""}
       </div>
     </div>
   );

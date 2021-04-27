@@ -53,7 +53,7 @@ function getInitialPopulation(populationAmount, amountOfNeurons) {
   for (let i = 0; i < populationAmount; i++) {
     let chromosone = [];
     for (let i = 0; i < amountOfNeurons; i++) {
-      let neuronNumber = Math.floor(Math.random() * 80);
+      let neuronNumber = Math.floor(Math.random() * 75);
       // 62 alphanumeric (A-Z, a-z, 0-9) and 28 special characters
       let neuron = numberToCharacter(neuronNumber);
       chromosone.push(neuron);

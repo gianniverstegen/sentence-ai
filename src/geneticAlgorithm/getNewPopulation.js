@@ -74,7 +74,7 @@ function getChild(relativeChance, mutation) {
 function _mutateChild(child, mutation) {
   for (let i = 0; i < child.length; i++) {
     if (Math.random() < mutation) {
-      let mutatedCell = numberToCharacter(Math.floor(Math.random() * 80));
+      let mutatedCell = numberToCharacter(Math.floor(Math.random() * 75));
       child =
         child.substr(0, i) + mutatedCell + child.substr(i + 1, child.length);
     }

@@ -96,24 +96,38 @@ input:focus {
 .topSentence {
   margin-top: 5%;
   width: 100%;
-  color: #f64c72;
+  color: #dd5afd;
 }
 
 .topFitness {
   margin-top: 5%;
   width: 100%;
-  color: #f64c72;
+  color: #3a3dff;
 }
 
 #generationAmountDisplayer {
   position: absolute;
   top: 13%;
-  margin-top: 3px;
-  left: 18%;
+  margin-top: 4px;
+  left: 40%;
+  font-style: italic;
+  color: #3a3dff;
+}
+
+#infoBox {
+  position: absolute;
+  top: 22%;
+  width: 50%;
+  margin-top: 4px;
+  left: 5%;
+  font-style: italic;
+  color: #dd5afd;
 }
 
 /* GREY: 99738e
 DARKERGREY: 553D67
 DARKERPURPLE: 242582
 PURPLE: 2f2fa2
-ORANGE: f64c72 */
+ORANGE: f64c72 
+pretty pink: dd5afd
+pretty blue: 3a3dff*/

@@ -11,9 +11,9 @@ function App() {
     mutation: 0.01,
   });
 
-  const [targetSentence, setSentence] = useState({ value: "hi" });
+  const [targetSentence, setSentence] = useState({ value: "" });
   const [currentGeneration, setGeneration] = useState(undefined);
-  const [generationNumber, setGenerationNumber] = useState(1);
+  const [generationNumber, setGenerationNumber] = useState(0);
   const [isRunning, setRunning] = useState(false);
 
   function generateSentences(sentence) {
@@ -77,6 +77,7 @@ function App() {
       <InputBox
         generateSentences={generateSentences}
         generationNumber={generationNumber}
+        targetSentence={targetSentence}
       />
       <GenerationInputBox
         currentGeneration={
