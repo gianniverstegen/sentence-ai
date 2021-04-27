@@ -47,7 +47,7 @@ input:focus {
   outline: none;
 }
 
-#inputBox button {
+#goButton {
   top: 12%;
   margin-top: 3px;
   left: 5%;
@@ -61,6 +61,23 @@ input:focus {
   border-radius: 4px;
   outline: none;
   -moz-outline: none;
+}
+
+#infoButton {
+  top: 12%;
+  margin-top: 3px;
+  left: 18%;
+  width: 25px;
+  height: 30px;
+  color: #2f2fa2;
+  background-color: #3a3dff;
+  position: absolute;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  -moz-outline: none;
+  font-style: italic;
 }
 
 #inputBox button:active {
@@ -122,6 +139,69 @@ input:focus {
   left: 5%;
   font-style: italic;
   color: #dd5afd;
+}
+
+.pop-up > #firstButton {
+  position: absolute;
+  width: 30%;
+  top: 80%;
+  height: 25px;
+  left: 5%;
+  border-radius: 8px;
+  color: #dd5afd;
+  background-color: #2f2fa2;
+  border: none;
+}
+
+.pop-up > #firstButton:active {
+  color: #2f2fa2;
+  background-color: #dd5afd;
+}
+
+.pop-up > #secondButton {
+  position: absolute;
+  width: 30%;
+  top: 80%;
+  height: 25px;
+  left: 65%;
+  border-radius: 8px;
+  color: #dd5afd;
+  background-color: #2f2fa2;
+  border: none;
+}
+
+.pop-up > p {
+  position: absolute;
+  top: 18%;
+  width: 90%;
+  left: 5%;
+}
+
+.pop-up > h2 {
+  font-size: 16px;
+  font-weight: bolder;
+  position: absolute;
+  color: #dd5afd;
+  top: 8%;
+  width: 70%;
+  left: 15%;
+  text-align: center;
+}
+
+.pop-up {
+  position: absolute;
+  z-index: 10;
+  top: 22%;
+  left: 35%;
+  width: 30%;
+  background-color: #242582;
+  height: 20%;
+  text-align: center;
+  /* opacity: ; */
+  border-radius: 10px;
+  border: solid 3px #4f4fd6;
+  min-width: 450px;
+  min-height: 240px;
 }
 
 /* GREY: 99738e

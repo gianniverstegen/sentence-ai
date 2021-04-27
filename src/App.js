@@ -3,6 +3,7 @@ import geneticAlgorithm from "./geneticAlgorithm/geneticAlgorithm";
 import InputBox from "./components/InputBox";
 import GenerationInputBox from "./components/GenerationResultBox";
 import useInterval from "./useInterval";
+import InfoBox from "./components/InfoBox";
 
 function App() {
   const [globalState, setState] = useState({
@@ -60,20 +61,10 @@ function App() {
       setRunning(false);
     }
   }
-  // use setInterval maybe
-  // while (currentGeneration[0][0] !== sentence) {
-  //   let newGeneration = geneticAlgorithm(
-  //     sentence,
-  //     globalState.populationAmount,
-  //     globalState.mutation,
-  //     currentGeneration
-  //   );
-  //   currentGeneration = newGeneration;
-  // }
-  // setGeneration(currentGeneration);
 
   return (
     <div className="App">
+      <InfoBox />
       <InputBox
         generateSentences={generateSentences}
         generationNumber={generationNumber}

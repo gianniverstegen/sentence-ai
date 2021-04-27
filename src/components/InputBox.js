@@ -6,6 +6,10 @@ const InputBox = ({ generateSentences, generationNumber, targetSentence }) => {
     setIntermediateSentence({ value: event.target.value });
   }
 
+  function infoBoxAppear() {
+    document.getElementById("pop-up").style.display = "inline-block";
+  }
+
   return (
     <div id="inputBox">
       <form>
@@ -16,7 +20,10 @@ const InputBox = ({ generateSentences, generationNumber, targetSentence }) => {
           onChange={setTargetSentence}
         />
       </form>
-      <button onClick={() => generateSentences(currentSentence.value)}>
+      <button
+        id="goButton"
+        onClick={() => generateSentences(currentSentence.value)}
+      >
         GO
       </button>
       <div id="generationAmountDisplayer">
@@ -26,6 +33,9 @@ const InputBox = ({ generateSentences, generationNumber, targetSentence }) => {
         Using a population of a thousand, approximately{" "}
         {generationNumber * 1000} possible sentences were considered.{""}
       </div>
+      <button id="infoButton" onClick={infoBoxAppear}>
+        i
+      </button>
     </div>
   );
 };
