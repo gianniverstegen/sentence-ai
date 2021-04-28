@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/sentence-ai/static/css/main.54a8cc1f.chunk.css",
-    "main.js": "/sentence-ai/static/js/main.9b75a87b.chunk.js",
-    "main.js.map": "/sentence-ai/static/js/main.9b75a87b.chunk.js.map",
+    "main.css": "/sentence-ai/static/css/main.cc59f73c.chunk.css",
+    "main.js": "/sentence-ai/static/js/main.37c65d4a.chunk.js",
+    "main.js.map": "/sentence-ai/static/js/main.37c65d4a.chunk.js.map",
     "runtime-main.js": "/sentence-ai/static/js/runtime-main.0a184e48.js",
     "runtime-main.js.map": "/sentence-ai/static/js/runtime-main.0a184e48.js.map",
     "static/js/2.109157c4.chunk.js": "/sentence-ai/static/js/2.109157c4.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.ea91f587.chunk.js": "/sentence-ai/static/js/3.ea91f587.chunk.js",
     "static/js/3.ea91f587.chunk.js.map": "/sentence-ai/static/js/3.ea91f587.chunk.js.map",
     "index.html": "/sentence-ai/index.html",
-    "static/css/main.54a8cc1f.chunk.css.map": "/sentence-ai/static/css/main.54a8cc1f.chunk.css.map",
+    "static/css/main.cc59f73c.chunk.css.map": "/sentence-ai/static/css/main.cc59f73c.chunk.css.map",
     "static/js/2.109157c4.chunk.js.LICENSE.txt": "/sentence-ai/static/js/2.109157c4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0a184e48.js",
     "static/js/2.109157c4.chunk.js",
-    "static/css/main.54a8cc1f.chunk.css",
-    "static/js/main.9b75a87b.chunk.js"
+    "static/css/main.cc59f73c.chunk.css",
+    "static/js/main.37c65d4a.chunk.js"
   ]
 }
